@@ -1,0 +1,46 @@
+一.$.each
+$.each(target,function(index,n){
+
+});
+1.其中,target:为要遍历的对象，可以使数组和json对象
+     index:当前次数
+     n:当前对象
+
+ 2.example
+   var checked = $('#columnSelectTree').tree('getChecked');//checked为json对象
+       $.each(checked,function(i,n){
+	 treeColumns.push({"atterConfigId":n.id,"atterName":n.atterName,"titleName":n.text,"sequence":i+1});
+	 treeIds = treeIds+n.id+",";
+	 treeCol=treeCol+n.atterName+",";
+       });
+
+二.$(“标签”).each
+1.   此种一般用于遍历标签
+2.example
+
+  <html>
+	<head>
+	 <script type="text/javascript" src="/jquery/jquery.js"></script>
+	 <script type="text/javascript">
+	$(document).ready(function(){
+	  $("button").click(function(){
+	    $("li").each(function(){
+	      alert($(this).text())
+	    });
+	  });
+	});
+	</script>
+	</head>
+	<body>
+	<button>输出每个列表项的值</button>
+	<ul>
+	<li>Coffee</li>
+	<li>Milk</li>
+	<li>Soda</li>
+	</ul>
+	</body>
+</html>	
+
+三、相关连接
+   1.2种遍历的讲解：http://www.cnblogs.com/zzcit/p/5695172.html，
+   2.方法2的例子：http://www.w3school.com.cn/tiy/t.asp?f=jquery_traversing_each
